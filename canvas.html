@@ -8,22 +8,26 @@
         integrity="sha256-tA8y0XqiwnpwmOIl3SGAcFl2RvxHjA8qp0+1uCGmRmg="
         crossorigin="anonymous"></script>
     <style>
-        #drawcanvas { width:500px; height:500px } 
+        #drawcanvas { width:300px; height:300px } 
     </style>
 </head>    
 <body>
-    <canvas id="drawcanvas">
+    <canvas id="drawcanvas" ></canvas>
         <script>
             // console.log(PROJECTION.transform(45, 45));
             $(document).ready(function() {
                 var canvas = document.getElementById("drawcanvas");
+                canvas.width = 600;
+                canvas.height = 600;
                 if (canvas) {
                     var ctx = canvas.getContext('2d');
                     //ctx.fillStyle = 'green';
                     //ctx.fillRect(10, 10, 100, 100);
                     ctx.beginPath();
                     ctx.arc(200, 200, 100, 0, 2 * Math.PI);
-                    ctx.fill();
+                    ctx.stroke();
+                    // Really needed?
+                    ctx.closePath();
                 }
             });
         </script>
